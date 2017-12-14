@@ -18,8 +18,8 @@ int main(int argc, char *argv[]) {
 
   from_server = client_handshake( &to_server );
 
-  printf("to_server: %d\n", to_server);
-  printf("from_server: %d\n", from_server);
+  //printf("to_server: %d\n", to_server);
+  //printf("from_server: %d\n", from_server);
   
   char *input;
   

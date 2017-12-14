@@ -29,8 +29,8 @@ int server_handshake(int *to_client) {
   char response[20];
   read(c2s, response, sizeof(response));
 
-  printf("to_server: %d\n", c2s);
-  printf("from_server: %d\n", s2c);
+  //printf("to_server: %d\n", c2s);
+  //printf("from_server: %d\n", s2c);
   
   printf("---------------HANDSHAKE DONE-----------------\n");
   
@@ -70,8 +70,8 @@ int client_handshake(int *to_server) {
   
   write(c2s, response, strlen(response) + 1);
 
-  printf("to_client: %d\n", s2c);
-  printf("from_client: %d\n", c2s);
+  //printf("to_client: %d\n", s2c);
+  //printf("from_client: %d\n", c2s);
   
   printf("---------------HANDSHAKE DONE-----------------\n");
 

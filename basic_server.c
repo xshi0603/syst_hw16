@@ -8,8 +8,8 @@ int main(int argc, char *argv[]) {
 
   from_client = server_handshake( &to_client );
 
-  printf("to_client: %d\n", to_client);
-  printf("from_client: %d\n", from_client);
+  //printf("to_client: %d\n", to_client);
+  //printf("from_client: %d\n", from_client);
   
   while(1){
     
