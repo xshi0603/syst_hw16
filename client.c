@@ -21,7 +21,8 @@ int main(int argc, char *argv[]) {
   //printf("to_server: %d\n", to_server);
   //printf("from_server: %d\n", from_server);
   
-  char *input;
+  char input[256];
+  char received[256];
   
   while(1){
 
@@ -31,11 +32,15 @@ int main(int argc, char *argv[]) {
 
     input[strlen(input) - 1] = 0;//removing the newline from the end of fgets 
     
-    write(to_server, input, strlen(input) + 1);
+    write(to_server, input, sizeof(input));
 
-    if(!strcmp(input, "exit")) {
+    if(!strcmp(input, "exit")) {//break out
       return 0;
     }
+    
+    read(from_server, received, sizeof(received));
+
+    printf("Recieved: %s\n", received);
       
   }
 }

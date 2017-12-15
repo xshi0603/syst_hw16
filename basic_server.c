@@ -11,9 +11,12 @@ int main(int argc, char *argv[]) {
   //printf("to_client: %d\n", to_client);
   //printf("from_client: %d\n", from_client);
   
+
+  char clientInput[256];
+  
   while(1){
-    
-    char clientInput[256];
+
+    char returning[256] = "";
     
     read(from_client, clientInput, sizeof(clientInput));
 
@@ -22,6 +25,11 @@ int main(int argc, char *argv[]) {
     if(!strcmp(clientInput, "exit")) {
       return 0;
     }
+
+    strcat(returning, clientInput);
+    strcat(returning, " + SERVER WAS HERE");
+    
+    write(to_client, returning, sizeof(returning));
     
   }
 
